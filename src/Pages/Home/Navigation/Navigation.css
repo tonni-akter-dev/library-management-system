@@ -1,0 +1,58 @@
+.notice_board{
+    background-color: rgb(81, 64, 187);
+    color: white !important;
+    /* font-weight: bold; */
+    padding: 5px;
+
+  /* text-align: end; */
+
+}
+.link_style{
+    color: white;
+    text-decoration: none;
+    display: flex;
+justify-content:space-between;
+align-items:center ;
+}
+.notice{
+    color: white;
+    text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+}
+.notice:hover{
+    color: white;
+}
+.navlink_design{
+    text-decoration: none;
+    color: rgb(81, 64, 187);
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav_bg{
+    background-color: white;
+}
+
+.navlink_design1{
+    text-decoration: none;
+    color: rgb(81, 64, 187);
+    font-weight: bold;
+    margin: 8px;
+}
+
+.office_info{
+font-size: small;
+margin: 8px;
+}
+.drop_down{
+    display: block;
+    padding-top: 0px !important;
+}
+.navDesign{
+    text-decoration: none;
+    margin: 10px;
+    color: white !important;
+}
+.navDesign1{
+    color: aliceblue;
+}
