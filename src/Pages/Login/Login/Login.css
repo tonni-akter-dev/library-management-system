@@ -1,0 +1,19 @@
+.login{
+    background-color: lightblue;
+    height: 100vh;
+}
+.loginform input{
+    width: 90%;
+    height: 50px;
+margin: 10px;
+
+}
+.loginform{
+    padding-left: 40px;
+
+}
+.bg2{   
+    margin-left: 80px;
+    background-color: white;
+    width: 45%;
+}
