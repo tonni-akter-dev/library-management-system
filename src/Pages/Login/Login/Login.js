@@ -22,16 +22,11 @@ const Login = () => {
   };
   return (
     <div className="row login pb-5">
-      <div className="col-lg-5">
-        <img
-          className="w-100 mt-5 pt-5"
-          src="https://srrafi.com/form-demo/formify/assets/img/chat-left.png"
-          alt=""
-        />
-      </div>
-      <div className="col-lg-7 bg2 mb-5">
-        <h3 className="mt-5 mb-4">Sign in to Coding Institute</h3>
-        <button
+      <div className="col-lg-12 bg2 mb-5">
+       <div className="login_form_div">
+       <div>
+       <h3 className="mt-5 mb-4 text-center">LIBRARY STUDENT LOGIN FORM</h3>
+        {/* <button
           // onClick={googleSignIn}
           style={{ width: "500px" }}
           className="btn btn-light ms-2"
@@ -42,12 +37,11 @@ const Login = () => {
             alt=""
           />{" "}
           Sign in with Google
-        </button>
-        <h6 className="text-center mt-4">or</h6>
+        </button> */}
         <form 
         onSubmit={handleLoginSubmit}
          className="loginform">
-          <label className="ps-2">Email</label>
+          <label className="ps-2 login_txt">Email</label>
           <input
             required
             type="email"
@@ -55,7 +49,7 @@ const Login = () => {
             placeholder="Your Email"
             onChange={handleOnchange}
           />
-          <label className="ps-2">PassWord</label>
+          <label className="ps-2 login_txt">Password</label>
           <input
             required
             placeholder="Your password"
@@ -65,12 +59,12 @@ const Login = () => {
           />{" "}
           <br />
           <button
-            style={{ width: "500px" }}
-            className="btn btn-dark mt-3 ms-2"
+            style={{ width: "100px" }}
+            className="btn btn_design mt-3 ms-2"
             type="submit"
           >
             Login
-          </button>{" "}
+          </button>
           <br />
           <NavLink
             to="/register"
@@ -81,9 +75,11 @@ const Login = () => {
               paddingLeft: "10px",
             }}
           >
-            New User? Please Register
+            New User? Please Create an account.
           </NavLink>
         </form>
+       </div>
+       </div>
         {/* {isLoading && <Spinner animation="grow" />}
         {user?.email && (
           <Alert variant="success">Login Successfully </Alert>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Navbar from 'react-bootstrap/Navbar';
-
+import './Dashboard.css';
 const Dashboard = () => {
   const { user, admin, logout } = useAuth();
   return (
@@ -29,37 +29,15 @@ const Dashboard = () => {
       <div className="row">
 
         <div
-          className="col-lg-2 col-sm-12"
-          style={{
-            // border: "2px solid gray",
-            backgroundColor: "skyblue",
-            // paddingLeft: "50px",
-
-            paddingTop: "30px",
-            height: "100vh",
-          }}
+          className="col-lg-2 col-sm-12 dashboard"
+        
         >
           <div className="text-center">
             <img height="50px" className="mx-auto" src="https://i.ibb.co/y48PY0V/pu-logo-1.png" alt="" />
 
             <h5>Presidency University Library</h5>
           </div>
-
-
-          <br /> <br />
-          {/* <Link
-            to="/home"
-            style={{
-              textDecoration: "none",
-              fontWeight: "bold",
-              display: "block",
-              marginBottom: "30px",
-              color: "black",
-            }}
-            className=" text-dark"
-          >
-            <i className="fas fa-home"></i> Home
-          </Link> */}
+          <br />
           <div className="text-light ps-5">
             {!admin && (
               <div>

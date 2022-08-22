@@ -36,8 +36,9 @@ const Navigation = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <NavLink className='navlink_design1' to="/">Home</NavLink>
-                            <NavLink className='navlink_design1' to="/login">About </NavLink>
-                            <NavLink className='navlink_design1' to="/login">Catalog </NavLink>
+                            <NavLink className='navlink_design1' to="/about">About </NavLink>
+                            <NavLink className='navlink_design1' to="/catalog">Catalog </NavLink>
+                            <NavLink className='navlink_design1' to="/searchcatalog">Search Catalog </NavLink>
                             <NavLink className='navlink_design1' to="/dashboard">Dashboard</NavLink>
                             <NavDropdown
                                 className="navDesign1"
@@ -49,51 +50,43 @@ const Navigation = () => {
                                 onMouseEnter={showDropdown}
                                 onMouseLeave={hideDropdown}
                             >
-                                <NavDropdown.Item to="/login">
+                                <NavDropdown.Item to="/alldatabase">
                                     <NavLink
                                         className=""
                                         style={{ color: "black", textDecoration: "none" }}
-                                        to="/login"
+                                        to="/alldatabase"
                                     >
-                                        Printed Books
+                                   All Database
                                     </NavLink>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item to="/login">
+                                <NavDropdown.Item to="/newcollection">
                                     <NavLink
                                         className=""
                                         style={{ color: "black", textDecoration: "none" }}
-                                        to="/login"
+                                        to="/newcollection"
                                     >
-                                        eBooks
+                                       New Collection
                                     </NavLink>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item to="/login">
+                                <NavDropdown.Item to="/topcollection">
                                     <NavLink
                                         className=""
                                         style={{ color: "black", textDecoration: "none" }}
-                                        to="/login"
+                                        to="/topcollection"
                                     >
-                                        Magazines
+                                        Top Collection
                                     </NavLink>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item to="/login">
+                                <NavDropdown.Item to="/asklibrarian">
                                     <NavLink
                                         className=""
                                         style={{ color: "black", textDecoration: "none" }}
-                                        to="/login"
+                                        to="/asklibrarian"
                                     >
-                                        NewsPapers
+                                       Ask a librarian?
                                     </NavLink>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item to="/login">
-                                    <NavLink
-                                        className=""
-                                        style={{ color: "black", textDecoration: "none" }}
-                                        to="/login"
-                                    >
-                                        Thesis
-                                    </NavLink>
-                                </NavDropdown.Item>
+                                
                             </NavDropdown>
                             {
                         user?.email ?
@@ -106,11 +99,12 @@ const Navigation = () => {
                             <NavLink className='navlink_design1' to="/login">Login</NavLink>
                     }
 
-                            <NavLink className='navlink_design1' to="/login">Ask a librarian?</NavLink>
+                           
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            
         </div>
     );
 };

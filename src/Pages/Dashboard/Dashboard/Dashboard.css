@@ -1,0 +1,7 @@
+.dashboard{
+    background-color: rgb(81, 64, 187);
+    color: white !important;
+    font-weight: bold;
+    padding-top: 30px;
+    height: 100vh;
+}

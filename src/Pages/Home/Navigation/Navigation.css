@@ -1,11 +1,10 @@
 .notice_board{
+    /* background-color: rgb(81, 64, 187); */
     background-color: rgb(81, 64, 187);
-    color: white !important;
+    /* background-color: skyblue; */
+    color: black !important;
     /* font-weight: bold; */
     padding: 5px;
-
-  /* text-align: end; */
-
 }
 .link_style{
     color: white;
@@ -25,16 +24,19 @@ align-items:center ;
 }
 .navlink_design{
     text-decoration: none;
+    color: white;
     color: rgb(81, 64, 187);
     font-weight: bold;
     font-size: 20px;
 }
 .nav_bg{
     background-color: white;
+color: rgb(81, 64, 187);
 }
 
 .navlink_design1{
     text-decoration: none;
+    /* color: white; */
     color: rgb(81, 64, 187);
     font-weight: bold;
     margin: 8px;
