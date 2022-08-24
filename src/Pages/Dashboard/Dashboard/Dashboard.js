@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import Navbar from 'react-bootstrap/Navbar';
 import './Dashboard.css';
+
 const Dashboard = () => {
   const { user, admin, logout } = useAuth();
   return (
@@ -28,13 +28,9 @@ const Dashboard = () => {
       </nav> */}
       <div className="row">
 
-        <div
-          className="col-lg-2 col-sm-12 dashboard"
-        
-        >
+        <div className="col-lg-2 col-sm-12 dashboard">
           <div className="text-center">
             <img height="50px" className="mx-auto" src="https://i.ibb.co/y48PY0V/pu-logo-1.png" alt="" />
-
             <h5>Presidency University Library</h5>
           </div>
           <br />
@@ -50,12 +46,18 @@ const Dashboard = () => {
                     marginBottom: "30px",
                     color: "white",
                   }}
-                  className=" text-dark"
                 >
                   <i className="fas fa-volleyball-ball"></i> My account
                 </Link>
+                {/* catalog dropdown */}
+             
+
+
+             
+                {/* catalog dropdown */}
+
                 <Link
-                  to={`/dashboard/payment`}
+                  to={`/dashboard/user_catalogs`}
                   style={{
                     textDecoration: "none",
                     fontWeight: "bold",
@@ -63,9 +65,9 @@ const Dashboard = () => {
                     marginBottom: "30px",
                     color: "white",
                   }}
-                  className=" text-dark"
+                // className=" text-dark"
                 >
-                  <i className="fab fa-paypal"></i> Payment
+                  <i className="fab fa-paypal"></i> Catalogs
                 </Link>
 
               </div>

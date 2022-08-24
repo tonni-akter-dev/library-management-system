@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <img src="https://i.ibb.co/Zd3Z4Kd/banner.jpg" alt="" />
+            <img src="https://i.ibb.co/Zd3Z4Kd/banner.jpg"  className="img-fluid" alt="" />
         </div>
     );
 };

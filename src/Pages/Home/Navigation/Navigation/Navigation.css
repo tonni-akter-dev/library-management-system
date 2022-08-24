@@ -6,13 +6,7 @@
     /* font-weight: bold; */
     padding: 5px;
 }
-.link_style{
-    color: white;
-    text-decoration: none;
-    display: flex;
-justify-content:space-between;
-align-items:center ;
-}
+
 .notice{
     color: white;
     text-decoration: none;
@@ -58,3 +52,7 @@ margin: 8px;
 .navDesign1{
     color: aliceblue;
 }
+
+.dropdown::after{
+    display: none !important; 
+  }

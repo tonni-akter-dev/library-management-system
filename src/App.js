@@ -2,11 +2,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthProvider from './Pages/context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import DashboardPort from './Pages/Dashboard/DashboardPort/DashboardPort';
 import MyAccount from './Pages/Dashboard/MyAccount/MyAccount';
+import UserCatalogs from './Pages/Dashboard/UserCatalogs/UserCatalogs';
 import About from './Pages/Home/About/About';
 import AskALibrarian from './Pages/Home/AskALibrarian/AskALibrarian';
 import Catalog from './Pages/Home/Catalog/Catalog';
 import Home from './Pages/Home/Home/Home';
+import NoticeBoard from './Pages/Home/NoticeBoard/NoticeBoard';
 import AllDatabase from './Pages/Home/Resources/AllDatabase/AllDatabase';
 import NewCollection from './Pages/Home/Resources/NewCollection/NewCollection';
 import TopCollection from './Pages/Home/Resources/TopCollection/TopCollection';
@@ -22,10 +25,11 @@ function App() {
             {/* user routes  starts */}
 
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/asklibrarian" element={<AskALibrarian />} />
+            <Route path="/noticeboard" element={<NoticeBoard />} />
 
             {/* resouces route */}
             <Route path="/topcollection" element={<TopCollection />} />
@@ -44,7 +48,9 @@ function App() {
                 <Dashboard></Dashboard>
               }
             >
+              <Route path={`/dashboard`} element={<DashboardPort />} />
               <Route path={`/dashboard/myaccount`} element={<MyAccount />} />
+              <Route path={`/dashboard/user_catalogs`} element={<UserCatalogs />} />
             </Route>
             {/* user routes  ends */}
 
@@ -59,7 +65,7 @@ function App() {
 
 
 
-            
+
             {/* ADMIN routes  starts */}
 
 
