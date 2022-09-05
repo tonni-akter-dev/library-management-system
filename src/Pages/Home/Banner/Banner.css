@@ -1,0 +1,10 @@
+.banner_bg_color{
+    background-color:#5140BB ;
+    opacity: .9;
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center; */
+    width: 50%;
+    margin-bottom:110px !important;
+    padding: 20px;
+}
