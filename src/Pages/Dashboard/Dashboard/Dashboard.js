@@ -35,8 +35,7 @@ const Dashboard = () => {
           </div>
           <br />
           <div className="text-light ps-5">
-            {!admin && (
-              <div>
+            {!admin && (              <div>
                 <Link
                 className="sidebar_item"
                   to={`/dashboard/myaccount`}
