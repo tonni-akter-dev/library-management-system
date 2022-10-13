@@ -2,7 +2,8 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import './Dashboard.css';
-
+// import Dropdown from 'react-bootstrap/Drop
+ 
 const Dashboard = () => {
   const { user, admin, logout } = useAuth();
   return (
@@ -27,7 +28,6 @@ const Dashboard = () => {
         )}
       </nav> */}
       <div className="row">
-
         <div className="col-lg-2 col-sm-12 dashboard">
           <div className="text-center">
             <img height="50px" className="mx-auto" src="https://i.ibb.co/y48PY0V/pu-logo-1.png" alt="" />
@@ -38,6 +38,7 @@ const Dashboard = () => {
             {!admin && (
               <div>
                 <Link
+                className="sidebar_item"
                   to={`/dashboard/myaccount`}
                   style={{
                     textDecoration: "none",
@@ -47,13 +48,12 @@ const Dashboard = () => {
                     color: "white",
                   }}
                 >
-                  <i className="fas fa-volleyball-ball"></i> My account
+                   My account
+                   <i class="bi bi-caret-down-fill"></i>
                 </Link>
                 {/* catalog dropdown */}
-             
+            
 
-
-             
                 {/* catalog dropdown */}
 
                 <Link
