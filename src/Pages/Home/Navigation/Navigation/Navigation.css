@@ -30,12 +30,21 @@ color: rgb(81, 64, 187);
 
 .navlink_design1{
     text-decoration: none;
-    /* color: white; */
     color: rgb(81, 64, 187);
     font-weight: bold;
     margin: 8px;
 }
-
+.navlink_design3{
+    text-decoration: none;
+    color: rgb(81, 64, 187);
+    font-weight: bold;
+    font-size: 13px;
+    margin: 8px;
+}
+.navlink_design3:hover{
+    color: white;
+  
+}
 .office_info{
 font-size: small;
 margin: 8px;
