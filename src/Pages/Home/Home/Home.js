@@ -1,6 +1,7 @@
 import React from 'react';
-import About from '../About/About';
+import Footer from '../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
+import Counter from '../Counter/Counter';
 import Navigation from '../Navigation/Navigation/Navigation';
 import NavTop from '../Navigation/NavTop/NavTop';
 
@@ -9,7 +10,9 @@ const Home = () => {
         <div>
             <NavTop />
             <Navigation />
-           <Banner/>                                          
+            <Banner />
+            <Counter />
+            <Footer />
         </div>
     );
 };

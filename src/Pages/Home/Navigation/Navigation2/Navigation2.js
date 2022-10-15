@@ -48,99 +48,40 @@ const Navigation2 = () => {
                             <NavLink className='navlink_design2' to="/about">About </NavLink>
                             <NavLink className='navlink_design2' to="/catalog">Catalog </NavLink>
                             <NavLink className='navlink_design2' to="/searchcatalog">Search Catalog </NavLink>
-                            {/* <NavLink className='navlink_design2' to="/dashboard">Dashboard</NavLink> */}
-                            <NavDropdown
-                                className="navDesign1"
-                                id="basic-nav-dropdown"
-                                title={
-                                    <span className="navlink_design2">Resources</span>
-                                }
-                                show={show}
-                                onMouseEnter={showDropdown}
-                                onMouseLeave={hideDropdown}
-                            >
-                                <NavDropdown.Item to="/alldatabase">
-                                    <NavLink
-                                        className=""
-                                        style={{ color: "black", textDecoration: "none" }}
-                                        to="/alldatabase"
-                                    >
-                                        All Database
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item to="/newcollection">
-                                    <NavLink
-                                        className=""
-                                        style={{ color: "black", textDecoration: "none" }}
-                                        to="/newcollection"
-                                    >
-                                        New Collection
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item to="/topcollection">
-                                    <NavLink
-                                        className=""
-                                        style={{ color: "black", textDecoration: "none" }}
-                                        to="/topcollection"
-                                    >
-                                        Top Collection
-                                    </NavLink>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item to="/asklibrarian">
-                                    <NavLink
-                                        className=""
-                                        style={{ color: "black", textDecoration: "none" }}
-                                        to="/asklibrarian"
-                                    >
-                                        Ask a librarian?
-                                    </NavLink>
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            {user.email ? (
-                                <NavDropdown
-                                    className="navDesign1 dropdown"
-                                    id="basic-nav-dropdown"
-                                    title={
-                                        <span className="navlink_design2"> {user.email && user.photoURL ? (
-                                            <img
-                                                src={user.photoURL}
-                                                className="ms-3 rounded-pill"
-                                                style={{ width: "30px" }}
-                                                alt=""
-                                            />
-                                        ) : (
-                                            <img
-                                                src="https://i.ibb.co/gPS4kB7/women.png"
-                                                className="ms-3 rounded-pill"
-                                                style={{ width: "50px" }}
-                                                alt=""
-                                            />
-                                        )}</span>
-                                    }
-                                    show={show1}
-                                    onMouseEnter={showDropdown1}
-                                    onMouseLeave={hideDropdown1}
-                                >
-                                    <NavDropdown.Item to="/dashboard/myaccount">
-                                        <NavLink className='navlink_design2' to="/dashboard/myaccount">My Profile</NavLink>
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item to="/dashboard">
-                                        <NavLink className='navlink_design2' to="/dashboard">Dashboard</NavLink>
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item to="/">
-                                        <NavLink className='navlink_design2' to="/login"><button
-                                            className="btn btn-dark"
-                                            style={{ width: "150px" }}
-                                            onClick={logout}
-                                        >
-                                            Logout
-                                        </button>
-                                        </NavLink>
-                                    </NavDropdown.Item>
 
-                                </NavDropdown>
-                            ) : (
-                                <NavLink className='navlink_design2' to="/login">Login</NavLink>)}
+
+                            <NavLink
+                                className="navlink_design2"
+                              
+                                to="/alldatabase"
+                            >
+                                All Database
+                            </NavLink>
+
+                            <NavLink
+                                className="navlink_design2"
+                              
+                                to="/newcollection"
+                            >
+                                New Collection
+                            </NavLink>
+
+                            <NavLink
+                                className="navlink_design2"
+                               
+                                to="/topcollection"
+                            >
+                                Top Collection
+                            </NavLink>
+
+                            <NavLink
+                                className="navlink_design2"
+                              
+                                to="/asklibrarian"
+                            >
+                                Ask a librarian?
+                            </NavLink>
+
 
                         </Nav>
                     </Navbar.Collapse>

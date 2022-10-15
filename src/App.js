@@ -7,6 +7,7 @@ import MyAccount from './Pages/Dashboard/MyAccount/MyAccount';
 import UserCatalogs from './Pages/Dashboard/UserCatalogs/UserCatalogs';
 import About from './Pages/Home/About/About';
 import AskALibrarian from './Pages/Home/AskALibrarian/AskALibrarian';
+import Catagories from './Pages/Home/CatalogPages/Catagories/Catagories';
 import Catalog from './Pages/Home/CatalogPages/Catalog/Catalog';
 import SearchCatalog from './Pages/Home/CatalogPages/SearchCatalog/SearchCatalog';
 
@@ -35,7 +36,7 @@ function App() {
             <Route path="/topcollection" element={<TopCollection />} />
             <Route path="/newcollection" element={<NewCollection />} />
             <Route path="/alldatabase" element={<AllDatabase />} />
-            <Route path="/searchcatalog" element={<SearchCatalog />} />
+
 
             {/* resouces route ends*/}
             <Route path="/login" element={<Login />} />
@@ -52,7 +53,13 @@ function App() {
               <Route path={`/dashboard/user_catalogs`} element={<UserCatalogs />} />
             </Route>
             {/* user routes  ends */}
+            {/* Catalog pages------------start */}
+            <Route path="/searchcatalog" element={<SearchCatalog />} />
+            <Route path="/catagories" element={<Catagories/>} />
 
+
+
+            {/* Catalog pages------------start */}
 
 
 

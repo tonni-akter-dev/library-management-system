@@ -80,5 +80,9 @@ margin: 8px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    margin: 10px;
+    margin: 8px;
+}
+  .navlink_design2:hover{
+    color: white;
+   
 }
