@@ -1,13 +1,21 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Card, Col, Container } from 'react-bootstrap';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 const NewCollection = () => {
+    // const { authors, _id } = props.books;
     return (
         <div>
             <Navigation2 />
-            {/* catalog  */}
-            <div>
+            {/* <h2>{_id}</h2>
+            <h2>{authors}</h2> */}
+
+
+
+
+
+            {/*        <div>
                 <Container className="catalog-nav1 mt-3">
                     <Navbar expand="lg">
                         <Container className="catalog-nav">
@@ -17,10 +25,9 @@ const NewCollection = () => {
 
                         </Container>
                     </Navbar>
-                    {/* table  */}
                     <div>
-                        <table class="table">
-                            <thead class="thead-dark bg-dark text-light">
+                        <table className="table">
+                            <thead className="thead-dark bg-dark text-light">
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col">Title</th>
@@ -192,7 +199,11 @@ const NewCollection = () => {
 
 
                 </Container>
-            </div>
+            </div> */}
+
+
+
+
         </div>
     );
 };

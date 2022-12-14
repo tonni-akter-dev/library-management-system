@@ -4,7 +4,11 @@ import AuthProvider from './Pages/context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardPort from './Pages/Dashboard/DashboardPort/DashboardPort';
 import MyAccount from './Pages/Dashboard/MyAccount/MyAccount';
-import UserCatalogs from './Pages/Dashboard/UserCatalogs/UserCatalogs';
+import Books from './Pages/Dashboard/UserCatalogs/Books/Books';
+import EBooks from './Pages/Dashboard/UserCatalogs/EBooks/EBooks';
+import Journals from './Pages/Dashboard/UserCatalogs/Journals/Journals';
+import Thesis from './Pages/Dashboard/UserCatalogs/Thesis/Thesis';
+
 import About from './Pages/Home/About/About';
 import AskALibrarian from './Pages/Home/AskALibrarian/AskALibrarian';
 import Catagories from './Pages/Home/CatalogPages/Catagories/Catagories';
@@ -14,6 +18,34 @@ import SearchCatalog from './Pages/Home/CatalogPages/SearchCatalog/SearchCatalog
 import Home from './Pages/Home/Home/Home';
 import NoticeBoard from './Pages/Home/NoticeBoard/NoticeBoard';
 import AllDatabase from './Pages/Home/Resources/AllDatabase/AllDatabase';
+import DetailsA from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchA/DetailsA/DetailsA';
+import SearchA from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchA/SearchA';
+import SearchB from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchB/SearchB';
+import SearchC from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchC/SearchC';
+import SearchD from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchD/SearchD';
+import SearchE from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchE/SearchE';
+import SearchF from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchF/SearchF';
+import SearchG from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchG/SearchG';
+import SearchH from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchH/SearchH';
+import SearchI from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchI/SearchI';
+
+import SearchJ from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchJ/SearchJ';
+import SearchK from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchK/SearchK';
+import SearchL from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchL/SearchL';
+import SearchM from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchM/SearchM';
+import SearchN from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchN/SearchN';
+import SearchO from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchO/SearchO';
+import SearchP from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchP/SearchP';
+import SearchQ from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchQ/SearchQ';
+import SearchR from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchR/SearchR';
+import SearchS from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchS/SearchS';
+import SearchT from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchT/SearchT';
+import SearchU from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchU/SearchU';
+import SearchV from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchV/SearchV';
+import SearchW from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchW/SearchW';
+import SearchX from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchX/SearchX';
+import SearchY from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchY/SearchY';
+import SearchZ from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchZ/SearchZ';
 import NewCollection from './Pages/Home/Resources/NewCollection/NewCollection';
 import TopCollection from './Pages/Home/Resources/TopCollection/TopCollection';
 
@@ -41,6 +73,7 @@ function App() {
             {/* resouces route ends*/}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            {/* dashboard starts */}
             <Route path="/dashboard" element={<Dashboard />} />
             <Route
               path="/dashboard"
@@ -50,12 +83,20 @@ function App() {
             >
               <Route path={`/dashboard`} element={<DashboardPort />} />
               <Route path={`/dashboard/myaccount`} element={<MyAccount />} />
-              <Route path={`/dashboard/user_catalogs`} element={<UserCatalogs />} />
+              <Route path={`/dashboard/catalouge/books`} element={<Books />} />
+              <Route path={`/dashboard/catalouge/ebooks`} element={<EBooks />} />
+              <Route path={`/dashboard/catalouge/journals`} element={<Journals />} />
+              <Route path={`/dashboard/catalouge/thesis`} element={<Thesis />} />
+
+
+              {/* dashboard ends */}
+
+
             </Route>
             {/* user routes  ends */}
             {/* Catalog pages------------start */}
             <Route path="/searchcatalog" element={<SearchCatalog />} />
-            <Route path="/catagories" element={<Catagories/>} />
+            <Route path="/catagories" element={<Catagories />} />
 
 
 
@@ -65,21 +106,40 @@ function App() {
 
 
 
+            {/* All Database routes  starts */}
+            <Route path="letterA" element={<SearchA />} />
+            <Route path="letterA/:id" element={<DetailsA />} />
 
 
 
+            <Route path="letterB" element={<SearchB />} />
 
+            <Route path="letterC" element={<SearchC />} />
+            <Route path="letterD" element={<SearchD />} />
+            <Route path="letterE" element={<SearchE />} />
+            <Route path="letterF" element={<SearchF />} />
+            <Route path="letterG" element={<SearchG />} />
+            <Route path="letterH" element={<SearchH />} />
+            <Route path="letterI" element={<SearchI />} />
 
-
-
-            {/* ADMIN routes  starts */}
-
-
-
-            {/* ADMIN routes  ends */}
-
-
-
+            <Route path="letterJ" element={<SearchJ />} />
+            <Route path="letterK" element={<SearchK />} />
+            <Route path="letterL" element={<SearchL />} />
+            <Route path="letterM" element={<SearchM />} />
+            <Route path="letterN" element={<SearchN />} />
+            <Route path="letterO" element={<SearchO />} />
+            <Route path="letterP" element={<SearchP />} />
+            <Route path="letterQ" element={<SearchQ />} />
+            <Route path="letterR" element={<SearchR />} />
+            <Route path="letterS" element={<SearchS />} />
+            <Route path="letterT" element={<SearchT />} />
+            <Route path="letterU" element={<SearchU />} />
+            <Route path="letterV" element={<SearchV />} />
+            <Route path="letterW" element={<SearchW />} />
+            <Route path="letterX" element={<SearchX />} />
+            <Route path="letterY" element={<SearchY />} />
+            <Route path="letterZ" element={<SearchZ />} />
+            {/* All Database routes  ends */}
           </Routes>
         </Router>
       </AuthProvider>

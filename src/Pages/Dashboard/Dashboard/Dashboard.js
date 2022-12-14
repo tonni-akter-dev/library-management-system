@@ -1,32 +1,33 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import './Dashboard.css';
-// import Dropdown from 'react-bootstrap/Drop
- 
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Collapse from '@material-ui/core/Collapse';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+
+const useStyles = makeStyles((theme) => ({
+  nested: {
+    paddingLeft: theme.spacing(4),
+    marginBottom: 0
+  },
+}));
+
 const Dashboard = () => {
-  const { user, admin, logout } = useAuth();
+  // const { user, admin, logout } = useAuth();
+  const classNamees = useStyles();
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
     <div className="container-fluid">
-      {/* <nav className="container-fluid navbar navbar-dark text-light bg-dark p-2">
-        <h4>Dashboard</h4>
-        {user.email && <p className="ms-auto">{user?.displayName}</p>}
-        {user.photoURL ? (
-          <img
-            src={user.photoURL}
-            className="ms-3 rounded-pill"
-            style={{ width: "50px" }}
-            alt=""
-          />
-        ) : (
-          <img
-            src="https://i.ibb.co/gPS4kB7/women.png"
-            className="ms-3 rounded-pill"
-            style={{ width: "50px" }}
-            alt=""
-          />
-        )}
-      </nav> */}
       <div className="row">
         <div className="col-lg-2 col-sm-12 dashboard">
           <div className="text-center">
@@ -34,105 +35,178 @@ const Dashboard = () => {
             <h5>Presidency University Library</h5>
           </div>
           <br />
-          <div className="text-light ps-5">
-            {!admin && (              <div>
+          <div className="text-light">
+            {/* catalog dropdown */}
+            <List
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+              className={classNamees.root}
+            >
+              {/* dashboard */}
+              <ListItem button>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
                 <Link
-                className="sidebar_item"
+                  className="sidebar_item"
+                  to={`/dashboard`}
+                  style={{
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                    display: "block",
+                    color: "white",
+                  }}
+                >
+                  Dashboard
+                </Link>
+                <ExpandMore />
+              </ListItem>
+              {/* dashboard icon ends */}
+
+              {/* CATALOGUE */}
+              <ListItem button onClick={handleClick}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <Link
+                  className="sidebar_item"
                   to={`/dashboard/myaccount`}
                   style={{
                     textDecoration: "none",
                     fontWeight: "bold",
                     display: "block",
-                    marginBottom: "30px",
+                    // marginBottom: "30px",
                     color: "white",
                   }}
                 >
-                   My account
-                   <i class="bi bi-caret-down-fill"></i>
+                  Catalogue
                 </Link>
-                {/* catalog dropdown */}
-            
-
-                {/* catalog dropdown */}
-
+                {open ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+              <Collapse className="items_margin" in={open} timeout="auto" unmountOnExit>
+                <List component="span" >
+                  <ListItem button >
+                    <ListItemIcon className={classNamees.nested}>
+                      <StarBorder />
+                    </ListItemIcon>
+                    {/* <ListItemText primary="Starred" /> */}
+                    <Link
+                      className="sidebar_item"
+                      to={`/dashboard/catalouge/books`}
+                      style={{
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "block",
+                        color: "white",
+                      }}
+                    >
+                      Books
+                    </Link>
+                  </ListItem>
+                </List>
+              </Collapse>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="span" >
+                  <ListItem button >
+                    <ListItemIcon className={classNamees.nested}>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <Link
+                      className="sidebar_item"
+                      to={`/dashboard/catalouge/ebooks`}
+                      style={{
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "block",
+                        color: "white",
+                      }}
+                    >
+                      E-Books
+                    </Link>
+                  </ListItem>
+                </List>
+              </Collapse>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="span" >
+                  <ListItem button >
+                    <ListItemIcon className={classNamees.nested}>
+                      <StarBorder />
+                    </ListItemIcon>
+                    {/* <ListItemText primary="Starred" /> */}
+                    <Link
+                      className="sidebar_item"
+                      to={`/dashboard/catalouge/thesis`}
+                      style={{
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "block",
+                        // marginBottom: "30px",
+                        color: "white",
+                      }}
+                    >
+                      Thesis
+                    </Link>
+                  </ListItem>
+                </List>
+              </Collapse>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="span" >
+                  <ListItem button >
+                    <ListItemIcon className={classNamees.nested}>
+                      <StarBorder />
+                    </ListItemIcon>
+                    {/* <ListItemText primary="Starred" /> */}
+                    <Link
+                      className="sidebar_item"
+                      to={`/dashboard/catalouge/journals`}
+                      style={{
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        display: "block",
+                        // marginBottom: "30px",
+                        color: "white",
+                      }}
+                    >
+                      Journals
+                    </Link>
+                  </ListItem>
+                </List>
+              </Collapse>
+              {/* My Account starts */}
+              <ListItem button>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
                 <Link
-                  to={`/dashboard/user_catalogs`}
-                  style={{
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    display: "block",
-                    marginBottom: "30px",
-                    color: "white",
-                  }}
-                // className=" text-dark"
-                >
-                  <i className="fab fa-paypal"></i> Catalogs
-                </Link>
-
-              </div>
-            )}
-            {/* admin */}
-            {admin && (
-              <div>
-                <Link
-                  to={`/dashboard/allOrder`}
-                  style={{
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    display: "block",
-                    marginBottom: "30px",
-                  }}
-                  className=" text-dark"
-                >
-                  All Orders
-                </Link>
-                <Link
+                  className="sidebar_item"
                   to={`/dashboard/myaccount`}
                   style={{
                     textDecoration: "none",
                     fontWeight: "bold",
                     display: "block",
-                    marginBottom: "30px",
-                    color: "black",
+                    color: "white",
                   }}
-                  className=" text-dark"
                 >
-                  Myaccount
+                  My Account
                 </Link>
-                {/*  All Course  */}
-                <Link
-                  to={`/dashboard/allProducts`}
-                  style={{
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    display: "block",
-                    marginBottom: "30px",
-                  }}
-                  className=" text-dark"
-                >
-                  All Products
-                </Link>
-                {/*Add Course*/}
-                <Link
-                  to={`/dashboard/addCake`}
-                  style={{
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    display: "block",
-                    marginBottom: "30px",
-                  }}
-                  className=" text-dark"
-                >
-                  Add Cake
-                </Link>
-              </div>
-            )}
-            {/* logout */}
-            <button className="btn btn-dark" onClick={logout}>
-              <i className="fas fa-sign-out-alt"></i> Logout
-            </button>
+                <ExpandMore />
+              </ListItem>
+              {/* My Account ends */}
+
+
+
+
+
+            </List>
+
+            {/* catalog dropdown */}
+
+
           </div>
+
+
         </div>
+
 
 
         {/* dashport */}

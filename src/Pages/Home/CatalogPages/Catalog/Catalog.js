@@ -33,8 +33,8 @@ const Catalog = () => {
                     </Navbar>
                     {/* table  */}
                     <div>
-                        <table class="table">
-                            <thead class="thead-dark bg-dark text-light">
+                        <table className="table">
+                            <thead className="thead-dark bg-dark text-light">
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col">Title</th>

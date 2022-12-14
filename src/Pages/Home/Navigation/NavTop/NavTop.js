@@ -8,8 +8,8 @@ const NavTop = () => {
             <div className='notice_board'>
                 <Container className='link_style'>
                     <div>
-                        <span className='office_info'><i class="fas fa-envelope"></i> library@pu.edu.bd</span>
-                        <span className='office_info'><i class="fas fa-phone"></i> +8801766554433</span>
+                        <span className='office_info'><i className="fas fa-envelope"></i> library@pu.edu.bd</span>
+                        <span className='office_info'><i className="fas fa-phone"></i> +8801766554433</span>
                     </div>
                     <Link to="/noticeboard" className='notice'>Notice Board</Link>
                 </Container>

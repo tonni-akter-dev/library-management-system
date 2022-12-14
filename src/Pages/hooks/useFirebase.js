@@ -88,17 +88,21 @@ const useFirebase = () => {
     }).then();
   };
   // admin....verify
-  useEffect(() => {
-    if (user.email) {
-      setIsloading(true);
-      fetch(`https://glacial-plateau-86707.herokuapp.com/users/${user.email}`)
-        .then((res) => res.json())
-        .then((data) => setAdmin(data.admin))
-        .finally(() => {
-          setIsloading(false);
-        });
-    }
-  }, [user.email]);
+  // useEffect(() => {
+  //   if (user.email) {
+  //     setIsloading(true);
+  //     fetch(`https://glacial-plateau-86707.herokuapp.com/users/${user.email}`)
+  //       .then((res) => res.json())
+  //       .then((data) => setAdmin(data.admin))
+  //       .finally(() => {
+  //         setIsloading(false);
+  //       });
+  //   }
+  // }, [user.email]);
+  
+  
+  
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {

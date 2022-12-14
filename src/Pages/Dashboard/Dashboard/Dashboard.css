@@ -5,8 +5,6 @@
     padding-top: 30px;
     height: 100vh;
 }
-
-
 .dropdown-menu li {
     position: relative;
     }
@@ -27,3 +25,39 @@
     display: flex;
     justify-content: space-between;
     }
+
+    .items_margin{
+        margin-bottom: -5px;
+    }
+
+    /* dashboard port css */
+    .notice_board_btn{
+        width:90%;
+        margin: 0 auto;
+        background-color: aqua;
+        margin: 10px;
+    }
+    .librarians_cards{
+        text-align: center;
+        border: 1px solid blue;
+        border-radius: 50px ;
+        padding: 10px 20px;
+    }
+.cards_design{
+        height: 330px;
+        width: 350px !important;
+     border-radius: 3rem;
+    }
+.card_div{
+        display: flex;
+        /* margin-right:10px ; */
+        justify-content: space-around;
+    }
+.librarians_btn{
+    text-align: center;
+    margin-top: 40px;
+}
+.librarians_btn1{
+    padding: 10px 150px;
+
+}

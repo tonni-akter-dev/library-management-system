@@ -1,25 +1,28 @@
 import React from 'react';
-import { Col, Container, NavLink, Row } from 'react-bootstrap';
-import './Footer.css';
+import { useState, useEffect } from 'react';
+import { Row } from 'react-bootstrap';
+import Demo from '../Demo/Demo';
 const Footer = () => {
-    return (
-        <div className='mt-5'>
-            <Container>
-                <Row lg={12}>
-                    <Col lg={4} xs={12}>
-                        <NavLink className='navlink_design text-center' to="/">
-                            <img height="60px" className=''
-                            src="https://i.ibb.co/y48PY0V/pu-logo-1.png" alt="" />
-                        </NavLink>
-                    </Col>
+  const [allBooks, setAllBooks] = useState([]);
+  useEffect(() => {
+    const url = `http://localhost:5000/allBooks`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setAllBooks(data));
+  }, []);
+
+  return (
+    <div>
+      <Row lg={4}>
+        {allBooks.map((books) => (
+          <Demo key={books._id} books={books}></Demo>
+        ))}
+      </Row>
 
 
-                </Row>
-            </Container>
 
-
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Footer;

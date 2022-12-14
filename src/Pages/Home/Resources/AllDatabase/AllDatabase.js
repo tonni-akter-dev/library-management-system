@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import './AllDatabase.css'
 const AllDatabase = () => {
@@ -7,52 +8,54 @@ const AllDatabase = () => {
         <div>
             <Navigation2 />
             <Container className='database_bg'>
-                <h2 class="margin-b30">Database A-Z</h2>
+                <h2 className="margin-b30">Database A-Z</h2>
                 <div className='database_div'>
-                    <div class="col-md-12">
-                        <div class="media index content-body border-r5">
-                            <div class="text-center" >
-                                <div class="database buttons buttons-medium buttons-secondary buttons-space">
-                                    <a href="/search/alphabetical/letter:A">A</a>
-                                    <a href="/search/alphabetical/letter:B">B</a>
-                                    <a href="/search/alphabetical/letter:C">C</a>
-                                    <a href="/search/alphabetical/letter:D">D</a>
-                                    <a href="/search/alphabetical/letter:E">E</a>
-                                    <a href="/search/alphabetical/letter:F">F</a>
-                                    <a href="/search/alphabetical/letter:G">G</a>
-                                    <a href="/search/alphabetical/letter:H">H</a>
-                                    <a href="/search/alphabetical/letter:I">I</a>
-                                    <a href="/search/alphabetical/letter:J">J</a>
-                                    <a href="/search/alphabetical/letter:K">K</a>
-                                    <a href="/search/alphabetical/letter:L">L</a>
-                                    <a href="/search/alphabetical/letter:M">M</a>
-                                    <a href="/search/alphabetical/letter:N">N</a>
-                                    <a href="/search/alphabetical/letter:O">O</a>
-                                    <a href="/search/alphabetical/letter:P">P</a>
-                                    <a href="/search/alphabetical/letter:Q">Q</a>
-                                    <a href="/search/alphabetical/letter:R">R</a>
-                                    <a href="/search/alphabetical/letter:S">S</a>
-                                    <a href="/search/alphabetical/letter:T">T</a> <br /> <br />
-                                    <a href="/search/alphabetical/letter:U">U</a>
-                                    <a href="/search/alphabetical/letter:V">V</a>
-                                    <a href="/search/alphabetical/letter:W">W</a>
-                                    <a href="/search/alphabetical/letter:X">X</a>
-                                    <a href="/search/alphabetical/letter:Y">Y</a>
-                                    <a href="/search/alphabetical/letter:Z">Z
-                                    </a>
+                    <div className="col-md-12">
+                        <div className="media index content-body border-r5">
+                            <div className="text-center" >
+                                <div className="database buttons buttons-medium buttons-secondary buttons-space">
+                                    <Link to="/letterA">A</Link>
+
+                                    <Link to="/letterB">B</Link>
+                                    
+                                    <Link to="/letterC">C</Link>
+                                    <Link to="/letterD">D</Link>
+                                    <Link to="/letterE">E</Link>
+                                    <Link to="/letterF">F</Link>
+                                    <Link to="/letterG">G</Link>
+                                    <Link to="/letterH">H</Link>
+                                    <Link to="/letterI">I</Link>
+                                    <Link to="/letterJ">J</Link>
+                                    <Link to="/letterK">K</Link>
+                                    <Link to="/letterL">L</Link>
+                                    <Link to="/letterM">M</Link>
+                                    <Link to="/letterN">N</Link>
+                                    <Link to="/letterO">O</Link>
+                                    <Link to="/letterP">P</Link>
+                                    <Link to="/letterQ">Q</Link>
+                                    <Link to="/letterR">R</Link>
+                                    <Link to="/letterS">S</Link>
+                                    <Link to="/letterT">T</Link> <br /> <br />
+                                    <Link to="/letterU">U</Link>
+                                    <Link to="/letterV">V</Link>
+                                    <Link to="/letterW">W</Link>
+                                    <Link to="/letterX">X</Link>
+                                    <Link to="/letterY">Y</Link>
+                                    <Link to="/letterZ">Z
+                                    </Link>
                                 </div>
 
-                                <div class="mt-5 database buttons buttons-medium buttons-dark buttons-space margin-t15">
-                                    <a href="/search/alphabetical/letter:0">0</a>
-                                    <a href="/search/alphabetical/letter:1">1</a>
-                                    <a href="/search/alphabetical/letter:2">2</a>
-                                    <a href="/search/alphabetical/letter:3">3</a>
-                                    <a href="/search/alphabetical/letter:4">4</a>
-                                    <a href="/search/alphabetical/letter:5">5</a>
-                                    <a href="/search/alphabetical/letter:6">6</a>
-                                    <a href="/search/alphabetical/letter:7">7</a>
-                                    <a href="/search/alphabetical/letter:8">8</a>
-                                    <a href="/search/alphabetical/letter:9">9</a>
+                                <div className="mt-5 database buttons buttons-medium buttons-dark buttons-space margin-t15">
+                                    <Link to="/letter0">0</Link>
+                                    <Link to="/letter1">1</Link>
+                                    <Link to="/letter2">2</Link>
+                                    <Link to="/letter3">3</Link>
+                                    <Link to="/letter4">4</Link>
+                                    <Link to="/letter5">5</Link>
+                                    <Link to="/letter6">6</Link>
+                                    <Link to="/letter7">7</Link>
+                                    <Link to="/letter8">8</Link>
+                                    <Link to="/letter9">9</Link>
                                 </div>
 
 
