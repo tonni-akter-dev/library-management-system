@@ -6,10 +6,11 @@ import "./Login.css";
 import useAuth from "../../hooks/useAuth";
 import Navigation from "../../Home/Navigation/Navigation/Navigation";
 const Login = () => {
-  const { loginUser,googleSignIn,isLoading, error, user } = useAuth(); //googleSignIn, ,isLoading, error, user
+  const { loginUser,googleSignIn } = useAuth(); 
   const [loginData, setLoginData] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
+
   const handleOnchange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -29,18 +30,7 @@ const Login = () => {
           <div className="login_form_div">
             <div>
               <h3 className="mt-5 mb-4 text-center">LIBRARY STUDENT LOGIN FORM</h3>
-              {/* <button
-          // onClick={googleSignIn}
-          style={{ width: "500px" }}
-          className="btn btn-light ms-2"
-        >
-          <img
-            style={{ width: "28px" }}
-            src="https://i.ibb.co/W50g0mR/google.png"
-            alt=""
-          />{" "}
-          Sign in with Google
-        </button> */}
+            
               <form
                 onSubmit={handleLoginSubmit}
                 className="loginform">

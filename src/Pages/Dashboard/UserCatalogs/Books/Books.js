@@ -42,9 +42,9 @@ const Books = () => {
                                 </select>
                             </div>
                             <div className="input text input_margin">
-                                <input name="data[Filter][q]" tabindex="0" autofocus="autofocus" type="text" id="FilterQ" />
+                                <input name="data[Filter][q]" tabIndex="0" autoFocus="autoFocus" type="text" id="FilterQ" />
                             </div>
-                            <div className="submit  input_margin">
+                            <div className="submit input_margin">
                                 <button className='btn-sm btn btn-dark' type="button">Search</button>
                             </div>
                             <div className="submit input_margin">

@@ -1,8 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import './SearchCatalog.css';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { TableBody, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+        borderleft: 1
+    },
+    [`&.${tableCellClasses.body}`]: {
+        fontSize: 14,
+    },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+        border: 0,
+    },
+}));
 const SearchCatalog = () => {
+    const [searchText, setSearchText] = useState('');
+
+    const SearchValue = (e) => {
+        const value = e.target.value;
+        console.log(value);
+        setSearchText(value);
+    }
+    const handleSearchButton = (e) => {
+        console.log("submit searching value");
+    }
+    const [allBooks, setAllBooks] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/allBooks`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setAllBooks(data));
+    }, []);
+
+
     return (
         <div>
             <Navigation2 />
@@ -39,8 +87,7 @@ const SearchCatalog = () => {
                             <div className="input select input_margin">
                                 <select name="data[Filter][field]" id="FilterField">
                                     <option value="">Default</option>
-                                    <option value="Media.id">Id</option>
-                                    <option value="Media.title">Title</option>
+                                    <option value="title">Title</option>
                                     <option value="Media.call_no">Call No</option>
                                     <option value="Media.isbn">ISBN</option>
                                     <option value="Media.issn">ISSN</option>
@@ -54,20 +101,64 @@ const SearchCatalog = () => {
                                 </select>
                             </div>
                             <div className="input text input_margin">
-                                <input name="data[Filter][q]" tabindex="0" autofocus="autofocus" type="text" id="FilterQ" />
+                                <input onChange={SearchValue} name="searchText" tabIndex="0" autoFocus="autoFocus" type="text" id="FilterQ" />
                             </div>
                             <div className="submit  input_margin">
-                                <button className='btn-sm btn btn-dark' type="button">Search</button>
-                           
+                                <button className='btn-sm btn btn-dark' type="submit" >Search</button>
                             </div>
                             <div className="submit input_margin">
-                                <button className='btn-sm btn btn-dark' type="button">Clear</button>
+                                <button className='btn-sm btn btn-dark'>Clear</button>
                             </div>
                             <div>
-                                <input type="hidden" name="data[_Token][fields]" value="6f573c89bc51dce4e5162fcaaa470425e5e2e027%3A" id="TokenFields687799666" />
-                                <input type="hidden" name="data[_Token][unlocked]" value="" id="TokenUnlocked1332806451" />
+                                <input type="hidden" name="" value="" id="" />
                             </div>
                         </form>
+
+                        {/*search value */}
+                        <div>
+                            {/* table  */}
+                            {/* {
+                                allBooks.length === 0 ? (
+                                    <h1>there is no data</h1>
+                                ) : (
+                                    <TableContainer component={Paper}>
+                                        <Table aria-label="customized table">
+
+                                            <TableBody>
+                                                {allBooks.map((books) => (
+                                                    <StyledTableRow key={books._id}>
+                                                        <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }} >
+                                                            <img width="90px" src={books.img} alt="" />
+                                                        </StyledTableCell>
+                                                        <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }}>
+                                                            <Typography sx={{ fontWeight: 'bold' }} component="h6">
+                                                                <Link to={`/letterA/${books._id}`}>{books.title}</Link>
+                                                            </Typography>
+                                                            <Typography sx={{ fontSize: 13 }}>Edition:{books.edition}</Typography>
+                                                            <Typography sx={{ fontSize: 13 }}>Year:{books.publicationYear}</Typography>
+                                                            <Typography sx={{ fontSize: 13 }}>ISBN 13:{books.ISBN13}</Typography>
+                                                            <Typography sx={{ fontSize: 13 }}>Call No:{books.callNo}</Typography>
+                                                        </StyledTableCell>
+                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.authors}</StyledTableCell>
+                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.publisher}</StyledTableCell>
+                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.type}</StyledTableCell>
+                                                        <StyledTableCell align="left">{books.copies}</StyledTableCell>
+                                                    </StyledTableRow>
+                                                ))}
+
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+
+                                )
+                            } */}
+
+
+                        </div>
+
+
+
+
 
                     </div>
                 </div>
@@ -76,7 +167,7 @@ const SearchCatalog = () => {
 
 
 
-       
+
         </div>
 
 

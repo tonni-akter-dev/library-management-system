@@ -10,6 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TableBody, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.common.black,
@@ -78,7 +79,11 @@ const SearchB = () => {
                                                 <img width="90px" src={books.img} alt="" />
                                             </StyledTableCell>
                                             <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }}>
-                                                <Typography sx={{ fontWeight: 'bold' }} component="h6"> {books.title}</Typography>
+                                            <Typography sx={{ fontWeight: 'bold' }} component="h6">
+                                                    <Link to={`/letterA/${books._id}`}>{books.title}</Link>
+                                                </Typography>
+
+
                                                 <Typography sx={{ fontSize: 13 }}>Edition:{books.edition}</Typography>
                                                 <Typography sx={{ fontSize: 13 }}>Year:{books.publicationYear}</Typography>
                                                 <Typography sx={{ fontSize: 13 }}>ISBN 13:{books.ISBN13}</Typography>
