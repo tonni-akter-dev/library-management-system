@@ -3,6 +3,8 @@ import Footer from '../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
 import BookSlider from '../BookSlider/BookSlider';
 import Counter from '../Counter/Counter';
+import HomeBooks from '../HomeBooks/HomeBooks';
+import HomeSearch from '../HomeSearch/HomeSearch';
 import Navigation from '../Navigation/Navigation/Navigation';
 import NavTop from '../Navigation/NavTop/NavTop';
 const Home = () => {
@@ -11,8 +13,10 @@ const Home = () => {
             <NavTop />
             <Navigation />
             <Banner />
+            <HomeSearch />
             <Counter />
-            <BookSlider/>
+            <HomeBooks />
+            <BookSlider />
             <Footer />
         </div>
     );

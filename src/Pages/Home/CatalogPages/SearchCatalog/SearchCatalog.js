@@ -39,17 +39,8 @@ const SearchCatalog = () => {
         console.log(value);
         setSearchText(value);
     }
-    const handleSearchButton = (e) => {
-        console.log("submit searching value");
-    }
-    const [allBooks, setAllBooks] = useState([]);
-    useEffect(() => {
-        const url = `http://localhost:5000/allBooks`;
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => setAllBooks(data));
-    }, []);
-
+ 
+ 
 
     return (
         <div>

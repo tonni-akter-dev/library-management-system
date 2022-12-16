@@ -35,10 +35,9 @@ const Navigation = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <NavLink className='navlink_design1' to="/">Home</NavLink>
-                            <NavLink className='navlink_design1' to="/about">About </NavLink>
                             <NavLink className='navlink_design1' to="/catalog">Catalog </NavLink>
                             <NavLink className='navlink_design1' to="/searchcatalog">Search Catalog </NavLink>
-                            {/* <NavLink className='navlink_design1' to="/dashboard">Dashboard</NavLink> */}
+
                             <NavDropdown
                                 className="navDesign1"
                                 id="basic-nav-dropdown"
