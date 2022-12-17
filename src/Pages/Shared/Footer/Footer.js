@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-bootstrap';
 import './Footer.css'
 const Footer = () => {
   return (
@@ -9,6 +10,8 @@ const Footer = () => {
             <div className="row">
               <div className="col-xs-12 col-sm-6 col-md-3">
                 <div className="widget subscribe no-box">
+                 
+
                   <h5 className="widget-title">Presidency University<span></span></h5>
                   <p>Presidency University is an institution dedicated to excellence in teaching, research, training, and community services. </p>
                 </div>
