@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../../../Shared/Footer/Footer';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import './AllDatabase.css'
 const AllDatabase = () => {
@@ -17,7 +18,7 @@ const AllDatabase = () => {
                                     <Link to="/letterA">A</Link>
 
                                     <Link to="/letterB">B</Link>
-                                    
+
                                     <Link to="/letterC">C</Link>
                                     <Link to="/letterD">D</Link>
                                     <Link to="/letterE">E</Link>
@@ -57,22 +58,12 @@ const AllDatabase = () => {
                                     <Link to="/letter8">8</Link>
                                     <Link to="/letter9">9</Link>
                                 </div>
-
-
-                                \
                             </div>
-
                         </div>
-
                     </div>
-
-
-
-
-
-
                 </div>
             </Container>
+            <Footer />
         </div>
     );
 };
