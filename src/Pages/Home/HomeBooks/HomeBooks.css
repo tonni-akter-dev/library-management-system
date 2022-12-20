@@ -29,12 +29,12 @@
   color: black;
 }
 
-h2 {
+/* h2 {
   font-weight: bold;
   margin-bottom: 40px;
   padding-top: 40px;
   color: #fff;
-}
+} */
 
 @media (max-width:767px) {
   h2 {
@@ -43,13 +43,6 @@ h2 {
     font-size: 24px;
   }
 }
-
-/* .intro {
-  font-size: 16px;
-  max-width: 500px;
-  margin: 0 auto;
-} */
-
 .people {
   padding: 30px 0;
   cursor: pointer;

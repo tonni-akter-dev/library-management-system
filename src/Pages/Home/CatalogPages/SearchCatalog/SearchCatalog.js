@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
@@ -6,7 +7,6 @@ import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { TableBody, Typography } from '@mui/material';
@@ -21,7 +21,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
         fontSize: 14,
     },
 }));
-
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:nth-of-type(odd)': {
         backgroundColor: theme.palette.action.hover,
@@ -32,16 +31,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 const SearchCatalog = () => {
-    const [searchText, setSearchText] = useState('');
-
-    const SearchValue = (e) => {
+    const [state, setState] = useState({ type: '', branch: '', search_field: "title", search_text: "" });
+    const [searchValue, setSearchValue] = useState([])
+    const handleChange = (e) => {
+        const name = e.target.name;
         const value = e.target.value;
-        console.log(value);
-        setSearchText(value);
+        const prev_state = { ...state };
+        prev_state[name] = value;
+        setState(prev_state);
     }
- 
- 
-
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const url = `http://localhost:5000/search`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(state)
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                setSearchValue(data)
+            });
+    }
     return (
         <div>
             <Navigation2 />
@@ -51,48 +65,49 @@ const SearchCatalog = () => {
                         <h2>Search</h2>
                     </div>
                     <div className='search_bar_inner'>
-                        <form action="" className='search_bar'>
+                        <form onSubmit={handleSearch} className='search_bar'>
                             <div className="input select input_margin">
-                                <select name="">
-                                    <option value="">All</option>
-                                    <option value="4">Audio/Visuals</option>
-                                    <option value="1">Books</option>
-                                    <option value="2">E-Books</option>
-                                    <option value="5">E-Journals</option>
-                                    <option value="3">Journals</option>
-                                    <option value="6">News Clippings</option>
-                                    <option value="11">Other</option>
-                                    <option value="7">Publications</option>
-                                    <option value="8">References</option>
-                                    <option value="10">Software</option>
-                                    <option value="9">Thesis</option>
+                                <select onChange={handleChange} name="type" >
+                                    <option value=''>All</option>
+                                    <option value="Audio/Visuals">Audio/Visuals</option>
+                                    <option value="Book">Books</option>
+                                    <option value="E-Books">E-Books</option>
+                                    <option value="E-Journals">E-Journals</option>
+                                    <option value="Journals">Journals</option>
+                                    <option value="News Clippings">News Clippings</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Publications">Publications</option>
+                                    <option value="References">References</option>
+                                    <option value="Software">Software</option>
+                                    <option value="Thesis">Thesis</option>
                                 </select>
                             </div>
                             <div className="input select input_margin">
-                                <select id="FilterLibraryBranchId">
-                                    <option value="">All Branch</option>
-                                    <option value="10">Gulshan</option>
-                                    <option value="11">Banani</option>
+                                <select onChange={handleChange} id="FilterLibraryBranchId" name='branch'>
+                                    <option value=''>All Branch</option>
+                                    <option value="Gulshan">Gulshan</option>
+                                    <option value="Banani">Banani</option>
+                                    <option value="Baridhara">Baridhara</option>
                                 </select>
                             </div>
                             <div className="input select input_margin">
-                                <select name="data[Filter][field]" id="FilterField">
-                                    <option value="">Default</option>
+                                <select onChange={handleChange} name="search_field" id="FilterField">
+                                    <option value="title">Default</option>
                                     <option value="title">Title</option>
-                                    <option value="Media.call_no">Call No</option>
-                                    <option value="Media.isbn">ISBN</option>
-                                    <option value="Media.issn">ISSN</option>
-                                    <option value="Author.name">Author</option>
-                                    <option value="Publisher.name">Publisher</option>
-                                    <option value="Category.name">Category</option>
-                                    <option value="Media.tags">Tags</option>
-                                    <option value="MediaExtra.subject">Subject</option>
-                                    <option value="MediaDetail.abstract">Abstract</option>
-                                    <option value="MediaDetail.description">Description</option>
+                                    <option value="callNo">Call No</option>
+                                    <option value="ISBN10">ISBN</option>
+                                    <option value="ISBN13">ISSN</option>
+                                    <option value="authors">Author</option>
+                                    <option value="publisher">Publisher</option>
+                                    <option value="category">Category</option>
+                                    <option value="tags">Tags</option>
+                                    <option value="category">Subject</option>
+                                    <option value="abstract">Abstract</option>
+                                    <option value="description">Description</option>
                                 </select>
                             </div>
                             <div className="input text input_margin">
-                                <input onChange={SearchValue} name="searchText" tabIndex="0" autoFocus="autoFocus" type="text" id="FilterQ" />
+                                <input onChange={handleChange} name="search_text" tabIndex="0" required autoFocus="autoFocus" type="text" id="FilterQ" />
                             </div>
                             <div className="submit  input_margin">
                                 <button className='btn-sm btn btn-dark' type="submit" >Search</button>
@@ -108,15 +123,16 @@ const SearchCatalog = () => {
                         {/*search value */}
                         <div>
                             {/* table  */}
+                           
                             {/* {
-                                allBooks.length === 0 ? (
+                                searchValue.length === 0 ? (
                                     <h1>there is no data</h1>
                                 ) : (
                                     <TableContainer component={Paper}>
                                         <Table aria-label="customized table">
 
                                             <TableBody>
-                                                {allBooks.map((books) => (
+                                                {searchValue.map((books) => (
                                                     <StyledTableRow key={books._id}>
                                                         <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }} >
                                                             <img width="90px" src={books.img} alt="" />
