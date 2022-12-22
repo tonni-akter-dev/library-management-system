@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import './SearchCatalog.css';
@@ -9,8 +8,9 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { TableBody, Typography } from '@mui/material';
+import { TableBody, TableHead, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Footer from '../../../Shared/Footer/Footer';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.common.black,
@@ -52,20 +52,20 @@ const SearchCatalog = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
-                setSearchValue(data)
+                setSearchValue(data.data)
             });
     }
     return (
         <div>
             <Navigation2 />
-            <Container>
+            <Container className="bg">
                 <div className='search-outer'>
                     <div>
                         <h2>Search</h2>
                     </div>
                     <div className='search_bar_inner'>
                         <form onSubmit={handleSearch} className='search_bar'>
+                            {/* <h2>Search</h2> */}
                             <div className="input select input_margin">
                                 <select onChange={handleChange} name="type" >
                                     <option value=''>All</option>
@@ -119,66 +119,58 @@ const SearchCatalog = () => {
                                 <input type="hidden" name="" value="" id="" />
                             </div>
                         </form>
-
                         {/*search value */}
-                        <div>
-                            {/* table  */}
-                           
-                            {/* {
-                                searchValue.length === 0 ? (
-                                    <h1>there is no data</h1>
-                                ) : (
-                                    <TableContainer component={Paper}>
-                                        <Table aria-label="customized table">
-
-                                            <TableBody>
-                                                {searchValue.map((books) => (
-                                                    <StyledTableRow key={books._id}>
-                                                        <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }} >
-                                                            <img width="90px" src={books.img} alt="" />
-                                                        </StyledTableCell>
-                                                        <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }}>
-                                                            <Typography sx={{ fontWeight: 'bold' }} component="h6">
-                                                                <Link to={`/letterA/${books._id}`}>{books.title}</Link>
-                                                            </Typography>
-                                                            <Typography sx={{ fontSize: 13 }}>Edition:{books.edition}</Typography>
-                                                            <Typography sx={{ fontSize: 13 }}>Year:{books.publicationYear}</Typography>
-                                                            <Typography sx={{ fontSize: 13 }}>ISBN 13:{books.ISBN13}</Typography>
-                                                            <Typography sx={{ fontSize: 13 }}>Call No:{books.callNo}</Typography>
-                                                        </StyledTableCell>
-                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.authors}</StyledTableCell>
-                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.publisher}</StyledTableCell>
-                                                        <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.type}</StyledTableCell>
-                                                        <StyledTableCell align="left">{books.copies}</StyledTableCell>
-                                                    </StyledTableRow>
-                                                ))}
-
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
-
-                                )
-                            } */}
-
-
-                        </div>
-
-
-
-
 
                     </div>
                 </div>
+                <div style={{ backgroundColor: "#F5F5F5" }}>
+                    {/* table  */}
+                    {
+                        searchValue.length === 0 ? (
+                            <p className='text-center mt-5 pd' >Please enter a search keyword to search the entire library catalog items. Use specific search field to fine tune your search result for ISBN/ISSN, Author, Publisher etc.</p>
+                        ) : (
+                            <TableContainer component={Paper}>
+                                <Table aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow >
+                                            <StyledTableCell sx={{ border: 1 }} ></StyledTableCell>
+                                            <StyledTableCell sx={{ fontSize: 13, border: 1 }}>Title</StyledTableCell>
+                                            <StyledTableCell sx={{ fontSize: 13, border: 1 }} align="left">	Authors/Editors</StyledTableCell>
+                                            <StyledTableCell sx={{ fontSize: 13, border: 1 }} align="left">Publisher</StyledTableCell>
+                                            <StyledTableCell sx={{ fontSize: 13, border: 1 }} align="left">Type</StyledTableCell>
+                                            <StyledTableCell sx={{ fontSize: 13, border: 1 }} align="left">Copies</StyledTableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {searchValue.map((books) => (
+                                            <StyledTableRow key={books._id}>
+                                                <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }} >
+                                                    <img width="90px" src={books.img} alt="" />
+                                                </StyledTableCell>
+                                                <StyledTableCell component="th" scope="row" sx={{ borderRight: 1, borderColor: 'white' }}>
+                                                    <Typography sx={{ fontWeight: 'bold' }} component="h6">
+                                                        <Link to={`/letterA/${books._id}`}>{books.title}</Link>
+                                                    </Typography>
+                                                    <Typography sx={{ fontSize: 13 }}>Edition:{books.edition}</Typography>
+                                                    <Typography sx={{ fontSize: 13 }}>Year:{books.publicationYear}</Typography>
+                                                    <Typography sx={{ fontSize: 13 }}>ISBN 13:{books.ISBN13}</Typography>
+                                                    <Typography sx={{ fontSize: 13 }}>Call No:{books.callNo}</Typography>
+                                                </StyledTableCell>
+                                                <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.authors}</StyledTableCell>
+                                                <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.publisher}</StyledTableCell>
+                                                <StyledTableCell align="left" sx={{ borderRight: 1, borderColor: 'white' }}>{books.type}</StyledTableCell>
+                                                <StyledTableCell align="left">{books.copies}</StyledTableCell>
+                                            </StyledTableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        )
+                    }
+                </div>
             </Container>
-
-
-
-
-
+            <Footer />
         </div>
-
-
-
     );
 
 };

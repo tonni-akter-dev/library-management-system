@@ -7,6 +7,14 @@
     border: 5px solid rgb(218, 216, 216);
     border-radius: 3px;
 }
+.bg{
+    background-color: whitesmoke;
+  height:  auto;
+}
+.pd{
+    height: auto;
+    padding-bottom: 100px;
+}
 .search-outer{
     display: flex;
     justify-content: space-between;

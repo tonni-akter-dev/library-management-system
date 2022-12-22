@@ -90,8 +90,6 @@ function App() {
 
 
               {/* dashboard ends */}
-
-
             </Route>
             {/* user routes  ends */}
             {/* Catalog pages------------start */}
@@ -101,11 +99,6 @@ function App() {
 
 
             {/* Catalog pages------------start */}
-
-
-
-
-
             {/* All Database routes  starts */}
             <Route path="letterA" element={<SearchA />} />
             <Route path="letterA/:id" element={<DetailsA />} />
