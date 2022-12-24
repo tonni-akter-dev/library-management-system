@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Navigation2 from '../../Navigation/Navigation2/Navigation2';
 import Nav from 'react-bootstrap/Nav';
@@ -6,6 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import './Catalog.css';
 const Catalog = () => {
+    const [allBooks, setAllBooks] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/allBooks`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setAllBooks(data));
+    }, []);
+
     return (
         <div>
             <Navigation2 />
@@ -45,6 +53,7 @@ const Catalog = () => {
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 <tr>
                                     <td>
                                         <img height="100px" src="https://i.ibb.co/rt6jKvg/cover.png" alt="" />
@@ -60,33 +69,7 @@ const Catalog = () => {
                                     <td>2</td>
                                 </tr>
                                
-                                <tr>
-                                    <td>
-                                        <img height="100px" src="https://i.ibb.co/rt6jKvg/cover.png" alt="" />
-                                    </td>
-                                    <td>Companies act, 1994 (Authentic English Text)   <br />
-                                        <span>Year: 1995 </span> <br />
-                                        <span>Call No: 346.067 COM 1995 ENG </span>
-                                    </td>
-                                    <td>Ministry of Commerce,Bd</td>
-                                    <td></td>
-                                    <td>Books</td>
-                                    <td>2</td>
-                                </tr>
-                               
-                                <tr>
-                                    <td>
-                                        <img height="100px" src="https://i.ibb.co/rt6jKvg/cover.png" alt="" />
-                                    </td>
-                                    <td>Companies act, 1994 (Authentic English Text)   <br />
-                                        <span>Year: 1995 </span> <br />
-                                        <span>Call No: 346.067 COM 1995 ENG </span>
-                                    </td>
-                                    <td>Ministry of Commerce,Bd</td>
-                                    <td></td>
-                                    <td>Books</td>
-                                    <td>2</td>
-                                </tr>
+                                
                                
                           
                    

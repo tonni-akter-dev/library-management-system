@@ -1,13 +1,18 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-const Books = () => {
+const RequestForAbook = () => {
     return (
         <div>
+
             <Container fluid>
                 <div className='search-outer'>
                     <div>
-                       
+                        <button className='btn btn-dark'>
+                            <Link className='navlink_design2' to="/dashboard/books/requestforAbook">
+                                Request for a book
+                            </Link>
+                        </button>
                     </div>
                     <div className='search_bar_inner'>
                         <form action="" className='search_bar'>
@@ -44,9 +49,10 @@ const Books = () => {
                         </form>
                     </div>
                 </div>
-                 
+                {/* requested books form */}
 
-                 <h1>jelkdjf</h1>
+
+
 
 
 
@@ -56,4 +62,4 @@ const Books = () => {
     );
 };
 
-export default Books;
+export default RequestForAbook;

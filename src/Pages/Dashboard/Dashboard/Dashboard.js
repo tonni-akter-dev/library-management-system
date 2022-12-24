@@ -75,7 +75,6 @@ const Dashboard = () => {
                     textDecoration: "none",
                     fontWeight: "bold",
                     display: "block",
-                    // marginBottom: "30px",
                     color: "white",
                   }}
                 >
@@ -105,27 +104,7 @@ const Dashboard = () => {
                   </ListItem>
                 </List>
               </Collapse>
-              <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="span" >
-                  <ListItem button >
-                    <ListItemIcon className={classNamees.nested}>
-                      <StarBorder />
-                    </ListItemIcon>
-                    <Link
-                      className="sidebar_item"
-                      to={`/dashboard/catalouge/ebooks`}
-                      style={{
-                        textDecoration: "none",
-                        fontWeight: "bold",
-                        display: "block",
-                        color: "white",
-                      }}
-                    >
-                      E-Books
-                    </Link>
-                  </ListItem>
-                </List>
-              </Collapse>
+             
               <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="span" >
                   <ListItem button >

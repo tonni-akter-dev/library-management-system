@@ -52,37 +52,25 @@ const Navigation2 = () => {
 
                             <NavLink
                                 className="navlink_design2"
-                              
+
                                 to="/alldatabase"
                             >
                                 All Database
                             </NavLink>
-
                             <NavLink
                                 className="navlink_design2"
-                              
-                                to="/newcollection"
-                            >
-                                New Collection
-                            </NavLink>
 
-                            <NavLink
-                                className="navlink_design2"
-                               
                                 to="/topcollection"
                             >
                                 Top Collection
                             </NavLink>
-
                             <NavLink
                                 className="navlink_design2"
-                              
+
                                 to="/asklibrarian"
                             >
                                 Ask a librarian?
                             </NavLink>
-
-
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

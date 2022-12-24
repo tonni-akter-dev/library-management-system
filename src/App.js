@@ -5,16 +5,14 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DashboardPort from './Pages/Dashboard/DashboardPort/DashboardPort';
 import MyAccount from './Pages/Dashboard/MyAccount/MyAccount';
 import Books from './Pages/Dashboard/UserCatalogs/Books/Books';
-import EBooks from './Pages/Dashboard/UserCatalogs/EBooks/EBooks';
+import RequestForAbook from './Pages/Dashboard/UserCatalogs/Books/RequestForAbook';
 import Journals from './Pages/Dashboard/UserCatalogs/Journals/Journals';
 import Thesis from './Pages/Dashboard/UserCatalogs/Thesis/Thesis';
-
 import About from './Pages/Home/About/About';
 import AskALibrarian from './Pages/Home/AskALibrarian/AskALibrarian';
 import Catagories from './Pages/Home/CatalogPages/Catagories/Catagories';
 import Catalog from './Pages/Home/CatalogPages/Catalog/Catalog';
 import SearchCatalog from './Pages/Home/CatalogPages/SearchCatalog/SearchCatalog';
-
 import Home from './Pages/Home/Home/Home';
 import NoticeBoard from './Pages/Home/NoticeBoard/NoticeBoard';
 import AllDatabase from './Pages/Home/Resources/AllDatabase/AllDatabase';
@@ -28,7 +26,6 @@ import SearchF from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchF/Sear
 import SearchG from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchG/SearchG';
 import SearchH from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchH/SearchH';
 import SearchI from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchI/SearchI';
-
 import SearchJ from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchJ/SearchJ';
 import SearchK from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchK/SearchK';
 import SearchL from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchL/SearchL';
@@ -48,7 +45,6 @@ import SearchY from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchY/Sear
 import SearchZ from './Pages/Home/Resources/AllDatabase/AllDatabase/SearchZ/SearchZ';
 import NewCollection from './Pages/Home/Resources/NewCollection/NewCollection';
 import TopCollection from './Pages/Home/Resources/TopCollection/TopCollection';
-
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 function App() {
@@ -68,8 +64,6 @@ function App() {
             <Route path="/topcollection" element={<TopCollection />} />
             <Route path="/newcollection" element={<NewCollection />} />
             <Route path="/alldatabase" element={<AllDatabase />} />
-
-
             {/* resouces route ends*/}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -84,9 +78,9 @@ function App() {
               <Route path={`/dashboard`} element={<DashboardPort />} />
               <Route path={`/dashboard/myaccount`} element={<MyAccount />} />
               <Route path={`/dashboard/catalouge/books`} element={<Books />} />
-              <Route path={`/dashboard/catalouge/ebooks`} element={<EBooks />} />
               <Route path={`/dashboard/catalouge/journals`} element={<Journals />} />
               <Route path={`/dashboard/catalouge/thesis`} element={<Thesis />} />
+              <Route path={`/dashboard/books/requestforAbook`} element={<RequestForAbook />} />
 
 
               {/* dashboard ends */}
@@ -95,18 +89,11 @@ function App() {
             {/* Catalog pages------------start */}
             <Route path="/searchcatalog" element={<SearchCatalog />} />
             <Route path="/catagories" element={<Catagories />} />
-
-
-
             {/* Catalog pages------------start */}
             {/* All Database routes  starts */}
             <Route path="letterA" element={<SearchA />} />
             <Route path="letterA/:id" element={<DetailsA />} />
-
-
-
             <Route path="letterB" element={<SearchB />} />
-
             <Route path="letterC" element={<SearchC />} />
             <Route path="letterD" element={<SearchD />} />
             <Route path="letterE" element={<SearchE />} />
@@ -114,7 +101,6 @@ function App() {
             <Route path="letterG" element={<SearchG />} />
             <Route path="letterH" element={<SearchH />} />
             <Route path="letterI" element={<SearchI />} />
-
             <Route path="letterJ" element={<SearchJ />} />
             <Route path="letterK" element={<SearchK />} />
             <Route path="letterL" element={<SearchL />} />
